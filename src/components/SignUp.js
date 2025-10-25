@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { signup } from '../services/authService'
 import { useToast } from './ToastProvider'
+// import '../styles/SignUp.css'
 
 
 export default function Signup(){

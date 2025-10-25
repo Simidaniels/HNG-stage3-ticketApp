@@ -36,32 +36,26 @@ return (
 </nav>
 </div>
 </header>
-
-
 <main className="container main-content">
-<Routes>
-<Route path="/" element={<Landing />} />
-<Route path="/auth/login" element={<Login />} />
-<Route path="/auth/signup" element={<Signup />} />
-
-
-<Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-<Route path="/tickets" element={<ProtectedRoute><Tickets /></ProtectedRoute>} />
-
-
-<Route path="*" element={<Navigate to="/" replace />} />
-</Routes>
+    <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/auth/login" element={<Login />} />
+        <Route path="/auth/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/tickets" element={<ProtectedRoute><Tickets /></ProtectedRoute>} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
 </main>
 
 
 <footer className="site-footer">
-<div className="container footer-inner">
-<p>© {new Date().getFullYear()} TicketApp — Built by SimiDaniels</p>
-<nav>
-<Link to="/">Home</Link>
-<Link to="/auth/login">Login</Link>
-</nav>
-</div>
+    <div className="container footer-inner">
+        <p>© {new Date().getFullYear()} TicketApp — Built by SimiDaniels</p>
+        <nav>
+            <Link to="/">Home</Link>
+            <Link to="/auth/login">Login</Link>
+        </nav>
+    </div>
 </footer>
 </div>
 </ToastProvider>

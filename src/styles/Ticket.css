@@ -1,0 +1,93 @@
+/* c:/Users/new/Desktop/HNG Internship/ticket-app/src/styles/Ticket.css
+    Make form controls a bit smaller and tighter for Ticket.js
+*/
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.92rem; /* a bit smaller */
+  padding: 6px 8px;   /* reduced padding */
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: #222;
+  background:#e0e0e0;
+  transition: border-color .12s ease, box-shadow .12s ease;
+  outline: none;
+}
+
+/* Reduce textarea height */
+.textarea {
+  min-height: 64px;
+  max-height: 240px;
+  resize: none;
+  line-height: 1.3;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* Select appearance */
+.select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+                          linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 30px;
+}
+
+/* Focus states */
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(3,102,214,0.08);
+}
+
+/* Buttons — slightly smaller */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  font-size: 0.92rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button {
+  font-size: 0.9rem;
+  padding: 6px 8px;
+}
+
+/* Inline error text */
+.inline-error {
+  color: #b00020;
+  font-size: 0.85rem;
+  margin: 6px 0;
+}
+
+/* Ticket cards */
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.ticket-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  background: #fafafa;
+  font-size: 0.95rem;
+}
+
+/* Small responsive tweak */
+@media (max-width: 420px) {
+  .tickets-grid { grid-template-columns: 1fr; }
+  .card { padding: 10px; }
+  .input, .select, .textarea { font-size: 0.95rem; padding: 8px 8px; }
+}

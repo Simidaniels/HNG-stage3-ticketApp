@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import '../styles/Ticket.css'
 
 export default function Ticket({
   tickets = [],
@@ -56,10 +57,10 @@ export default function Ticket({
 
 
   return (
-	<div>
+	<div className="stats-wrapper">
 	  <h1>Tickets</h1>
 	  <section className="card" aria-labelledby="create-heading">
-		<h2 id="create-heading">Create ticket</h2>
+		<h2 id="create-heading">Create Ticket</h2>
 		<form onSubmit={handleCreate}>
 		  <label>Title<input className="input" value={form.title} onChange={e=>setForm({...form,title:e.target.value})} /></label>
 		  {errors.title && <p className="inline-error">{errors.title}</p>}

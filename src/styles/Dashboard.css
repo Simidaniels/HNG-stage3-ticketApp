@@ -1,0 +1,124 @@
+:root{
+    --bg: #0b1220;
+    --card: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    --muted: #9aa4b2;
+    --accent: #60a5fa;
+    --accent-600: #3b82f6;
+    --ring: rgba(96,165,250,0.14);
+    --shadow: 0 2px 5px #007bff;
+    --glass-border: rgba(255,255,255,0.03);
+}
+
+/* Basic page layout */
+html,body{
+    height:100%;
+    margin:0;
+    /* background: */
+    font-family:var(--font-stack);
+    color:var(--muted);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+h1{
+    margin:0;
+    font-size:1.75rem;
+    color:color-mix(in srgb, var(--muted) 90%, black);
+    font-weight:700;
+}
+
+h2{
+    margin:0 0 8px 0;
+    font-size:1.125rem;
+    color:var(--muted);
+    font-weight:600;
+}
+
+/* Stats grid */
+.stats-wrapper{
+    padding: 1rem;
+}
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+    gap:16px;
+    margin-top:16px;
+}
+
+/* Cards */
+.card{
+    background: linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(10, 12, 20, 1) 100%);
+    border:1px solid var(--glass-border);
+    padding:18px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    min-height:84px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    transition:transform .16s ease, box-shadow .16s ease;
+}
+/* 
+.card:focus-within,
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(2,6,23,0.08); 
+    outline: none;
+} */
+
+.card h3{
+    margin:0 0 6px 0;
+    font-size:.9rem;
+    color:var(--muted);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+}
+
+.card p{
+    margin:0;
+    font-size:1.75rem;
+    font-weight:700;
+    color:var(--accent-600);
+    line-height:1;
+}
+
+/* Button link */
+.btn-primary{
+    display:inline-block;
+    padding:10px 14px;
+    background:linear-gradient(180deg,var(--accent),var(--accent-600));
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+    box-shadow:0 6px 18px rgba(37,99,235,0.16);
+    transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.03);
+}
+
+.btn-primary:focus{
+    outline:3px solid var(--ring);
+    outline-offset:2px;
+    box-shadow:0 8px 28px var(--ring);
+}
+
+/* Utilities */
+section{
+    margin-top:20px;
+}
+
+/* Responsive adjustments */
+@media (max-width:420px){
+    .card p{
+        font-size:1.4rem;
+    }
+    h1{
+        font-size:1.5rem;
+    }
+}
+
